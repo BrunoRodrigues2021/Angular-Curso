@@ -6,27 +6,37 @@
             <option value="property-binding">Property Binding</option>
             <option value="style-binding">Class e Style Binding</option>
             <option value="event-binding">Event Binding</option>
+            <option value="two-way-binding">Two-way Data Binding</option>
         </select>
     </article>
-    <!-- FIM OPÇÕES -->
+</section>
+<!-- FIM OPÇÕES -->
 
-    <!-- INTERPOLAÇÃO -->
-    <article *ngIf="conteudo.value == 'interpolacao'">
+<!-- INTERPOLAÇÃO -->
+<section *ngIf="conteudo.value == 'interpolacao'">
+    <article>
         <h3>Interpolação</h3>
         <p>String renderizada com interpolação: {{ url }}</p>
         <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
         <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }}</p>
         <p>Curso de angular e gosto do curso {{ cursoAngular && getCurtirCurso() }}</p>
     </article>
-    <article *ngIf="conteudo.value == 'property-binding'">
+</section>
+<!-- FIM INTERPOLAÇÃO -->
+
+<!-- PROPERTY BINDING -->
+<section *ngIf="conteudo.value == 'property-binding'">
+    <article>
         <h3>Property Binding</h3>
         <img src="{{ urlImagem }}">
         <img [src]="urlImagem">
     </article>
-    <!-- FIM INTERPOLAÇÃO -->
+</section>
+<!-- FIM PROPERTY BINDING -->
 
-    <!-- CLASS E STYLE BINDING -->
-    <article *ngIf="conteudo.value == 'style-binding'">
+<!-- CLASS E STYLE BINDING -->
+<section *ngIf="conteudo.value == 'style-binding'">
+    <article>
         <h3>Class e Style Binding</h3>
         <div>
             Selecione uma classe:
@@ -57,10 +67,12 @@
             </alert>
         </div>
     </article>
-    <!-- FIM CLASS E STYLE BINDING -->
+</section>
+<!-- FIM CLASS E STYLE BINDING -->
 
-    <!-- EVENT BINDING -->
-    <article *ngIf="conteudo.value == 'event-binding'">
+<!-- EVENT BINDING -->
+<section *ngIf="conteudo.value == 'event-binding'">
+    <article>
         <h3>Event binding</h3>
         <div>
             <button class="btn btn-primary" (click)="botaoClicado()">Me Clique!</button>
@@ -69,11 +81,29 @@
                 (blur)="salvarValor(campoInput.value)" #campoInput>
             <p>Valor Atual: {{ valorAtual }}</p>
             <p>Valor Salvo: {{ valorSalvo }}</p>
-
             <br>
-
-            <p (mouseover)="onMouserOverOut()" (mouseout)="onMouserOverOut()" [class.highlight]="isMouseOver">Passe o mouse sobre mim</p>
+            <p (mouseover)="onMouserOverOut()" (mouseout)="onMouserOverOut()" [class.highlight]="isMouseOver">Passe
+                o mouse sobre mim</p>
         </div>
     </article>
-    <!-- FIM EVENT BINDING -->
 </section>
+<!-- FIM EVENT BINDING -->
+
+<!-- TWO WAY DATA BINDING -->
+<section class="two-way-binding" *ngIf="conteudo.value == 'two-way-binding'">
+    <article>
+        <h3>Two-way data binding</h3>
+        <div>
+            <input type="text" [(ngModel)]="nome">
+            <p>Você digitou: {{ nome }}</p>
+        </div>
+        <div>
+            <input type="text" [(ngModel)]="pessoa.nome">
+            <input type="text" [(ngModel)]="pessoa.idade">
+            <input type="text" [(ngModel)]="pessoa.endereco">
+
+            <p>Meu nome é {{ pessoa.nome }}, tenho {{ pessoa.idade }} anos e moro em {{ pessoa.endereco }}</p>
+        </div>
+    </article>
+</section>
+<!-- FIM TWO WAY DATA BINDING -->
