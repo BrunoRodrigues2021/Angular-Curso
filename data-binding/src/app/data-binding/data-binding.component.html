@@ -1,17 +1,32 @@
 <section>
+    <!-- OPÇÕES -->
     <article>
+        <select #conteudo (change)="0">
+            <option value="interpolacao">Interpolação</option>
+            <option value="property-binding">Property Binding</option>
+            <option value="style-binding">Class e Style Binding</option>
+            <option value="event-binding">Event Binding</option>
+        </select>
+    </article>
+    <!-- FIM OPÇÕES -->
+
+    <!-- INTERPOLAÇÃO -->
+    <article *ngIf="conteudo.value == 'interpolacao'">
         <h3>Interpolação</h3>
         <p>String renderizada com interpolação: {{ url }}</p>
         <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
         <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }}</p>
         <p>Curso de angular e gosto do curso {{ cursoAngular && getCurtirCurso() }}</p>
     </article>
-    <article>
+    <article *ngIf="conteudo.value == 'property-binding'">
         <h3>Property Binding</h3>
         <img src="{{ urlImagem }}">
         <img [src]="urlImagem">
     </article>
-    <article>
+    <!-- FIM INTERPOLAÇÃO -->
+
+    <!-- CLASS E STYLE BINDING -->
+    <article *ngIf="conteudo.value == 'style-binding'">
         <h3>Class e Style Binding</h3>
         <div>
             Selecione uma classe:
@@ -42,4 +57,11 @@
             </alert>
         </div>
     </article>
+    <!-- FIM CLASS E STYLE BINDING -->
+
+    <!-- EVENT BINDING -->
+    <article *ngIf="conteudo.value == 'event-binding'">
+
+    </article>
+    <!-- FIM EVENT BINDING -->
 </section>
