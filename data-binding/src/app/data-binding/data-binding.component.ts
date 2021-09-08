@@ -10,6 +10,7 @@ export class DataBindingComponent implements OnInit {
   url: string = 'http//loiane.com';
   cursoAngular: boolean = true;
   urlImagem: string = 'http://lorempixel.com/400/200/nature/';
+  nomeDoCurso: string = 'Angular';
 
   valorAtual: string = "";
   valorSalvo: string = "";
@@ -50,6 +51,10 @@ export class DataBindingComponent implements OnInit {
 
   onMouserOverOut() {
     this.isMouseOver = !this.isMouseOver;
+  }
+
+  onMudouValor(evento: any) {
+    console.log(evento.novoValor)
   }
 
 }

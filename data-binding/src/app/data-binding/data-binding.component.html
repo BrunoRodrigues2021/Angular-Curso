@@ -1,109 +1,121 @@
 <section>
-    <!-- OPÇÕES -->
-    <article>
-        <select #conteudo (change)="0">
-            <option value="interpolacao">Interpolação</option>
-            <option value="property-binding">Property Binding</option>
-            <option value="style-binding">Class e Style Binding</option>
-            <option value="event-binding">Event Binding</option>
-            <option value="two-way-binding">Two-way Data Binding</option>
-        </select>
-    </article>
+  <!-- OPÇÕES -->
+  <article>
+    <select #conteudo (change)="0">
+      <option value="interpolacao">Interpolação</option>
+      <option value="property-binding">Property Binding</option>
+      <option value="style-binding">Class e Style Binding</option>
+      <option value="event-binding">Event Binding</option>
+      <option value="two-way-binding">Two-way Data Binding</option>
+      <option value="input-properties">Input Properties</option>
+    </select>
+  </article>
 </section>
 <!-- FIM OPÇÕES -->
 
 <!-- INTERPOLAÇÃO -->
 <section *ngIf="conteudo.value == 'interpolacao'">
-    <article>
-        <h3>Interpolação</h3>
-        <p>String renderizada com interpolação: {{ url }}</p>
-        <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
-        <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }}</p>
-        <p>Curso de angular e gosto do curso {{ cursoAngular && getCurtirCurso() }}</p>
-    </article>
+  <article>
+    <h3>Interpolação</h3>
+    <p>String renderizada com interpolação: {{ url }}</p>
+    <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
+    <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }}</p>
+    <p>Curso de angular e gosto do curso {{ cursoAngular && getCurtirCurso() }}</p>
+  </article>
 </section>
 <!-- FIM INTERPOLAÇÃO -->
 
 <!-- PROPERTY BINDING -->
 <section *ngIf="conteudo.value == 'property-binding'">
-    <article>
-        <h3>Property Binding</h3>
-        <img src="{{ urlImagem }}">
-        <img [src]="urlImagem">
-    </article>
+  <article>
+    <h3>Property Binding</h3>
+    <img src="{{ urlImagem }}">
+    <img [src]="urlImagem">
+  </article>
 </section>
 <!-- FIM PROPERTY BINDING -->
 
 <!-- CLASS E STYLE BINDING -->
 <section *ngIf="conteudo.value == 'style-binding'">
-    <article>
-        <h3>Class e Style Binding</h3>
-        <div>
-            Selecione uma classe:
-            <select #classe (change)="0">
-                <option value="success">Sucesso</option>
-                <option value="info">Info</option>
-                <option value="warning">Alerta</option>
-                <option value="danger">Erro</option>
-            </select>
-            <br><br>
-            <alert type="{{ classe.value }}">
-                <strong>Dinâmico conforme o valor selecionado</strong>
-            </alert>
-            <alert type="danger" [style.display]="classe.value == 'danger' ? 'block' : 'none'">
-                <strong>Esse texto só aparece em caso de erro</strong>
-            </alert>
-            <alert type="{{ classe.value == 'success' && 'success' }}">
-                <strong>Sucesso</strong>
-            </alert>
-            <alert type="{{ classe.value == 'info' && 'info' }}">
-                <strong>Info</strong>
-            </alert>
-            <alert type="{{ (classe.value == 'warning' && 'warning') }}">
-                <strong>Alerta</strong> Better check yourself, you're not looking too good.
-            </alert>
-            <alert type="{{ classe.value == 'danger' && 'danger' }}">
-                <strong>Erro</strong> Change a few things up and try submitting again.
-            </alert>
-        </div>
-    </article>
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      Selecione uma classe:
+      <select #classe (change)="0">
+        <option value="success">Sucesso</option>
+        <option value="info">Info</option>
+        <option value="warning">Alerta</option>
+        <option value="danger">Erro</option>
+      </select>
+      <br><br>
+      <alert type="{{ classe.value }}">
+        <strong>Dinâmico conforme o valor selecionado</strong>
+      </alert>
+      <alert type="danger" [style.display]="classe.value == 'danger' ? 'block' : 'none'">
+        <strong>Esse texto só aparece em caso de erro</strong>
+      </alert>
+      <alert type="{{ classe.value == 'success' && 'success' }}">
+        <strong>Sucesso</strong>
+      </alert>
+      <alert type="{{ classe.value == 'info' && 'info' }}">
+        <strong>Info</strong>
+      </alert>
+      <alert type="{{ (classe.value == 'warning' && 'warning') }}">
+        <strong>Alerta</strong> Better check yourself, you're not looking too good.
+      </alert>
+      <alert type="{{ classe.value == 'danger' && 'danger' }}">
+        <strong>Erro</strong> Change a few things up and try submitting again.
+      </alert>
+    </div>
+  </article>
 </section>
 <!-- FIM CLASS E STYLE BINDING -->
 
 <!-- EVENT BINDING -->
 <section *ngIf="conteudo.value == 'event-binding'">
-    <article>
-        <h3>Event binding</h3>
-        <div>
-            <button class="btn btn-primary" (click)="botaoClicado()">Me Clique!</button>
-            <br><br>
-            <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor(campoInput.value)"
-                (blur)="salvarValor(campoInput.value)" #campoInput>
-            <p>Valor Atual: {{ valorAtual }}</p>
-            <p>Valor Salvo: {{ valorSalvo }}</p>
-            <br>
-            <p (mouseover)="onMouserOverOut()" (mouseout)="onMouserOverOut()" [class.highlight]="isMouseOver">Passe
-                o mouse sobre mim</p>
-        </div>
-    </article>
+  <article>
+    <h3>Event binding</h3>
+    <div>
+      <button class="btn btn-primary" (click)="botaoClicado()">Me Clique!</button>
+      <br><br>
+      <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor(campoInput.value)"
+        (blur)="salvarValor(campoInput.value)" #campoInput>
+      <p>Valor Atual: {{ valorAtual }}</p>
+      <p>Valor Salvo: {{ valorSalvo }}</p>
+      <br>
+      <p (mouseover)="onMouserOverOut()" (mouseout)="onMouserOverOut()" [class.highlight]="isMouseOver">Passe
+        o mouse sobre mim</p>
+    </div>
+  </article>
 </section>
 <!-- FIM EVENT BINDING -->
 
 <!-- TWO WAY DATA BINDING -->
 <section class="two-way-binding" *ngIf="conteudo.value == 'two-way-binding'">
-    <article>
-        <h3>Two-way data binding</h3>
-        <div>
-            <input type="text" [(ngModel)]="nome">
-            <p>Você digitou: {{ nome }}</p>
-        </div>
-        <div>
-            <input type="text" [(ngModel)]="pessoa.nome">
-            <input type="text" [(ngModel)]="pessoa.idade">
-            <input type="text" [(ngModel)]="pessoa.endereco">
+  <article>
+    <h3>Two-way data binding</h3>
+    <div>
+      <input type="text" [(ngModel)]="nome">
+      <p>Você digitou: {{ nome }}</p>
+    </div>
+    <div>
+      <input type="text" [(ngModel)]="pessoa.nome">
+      <input type="text" [(ngModel)]="pessoa.idade">
+      <input type="text" [(ngModel)]="pessoa.endereco">
 
-            <p>Meu nome é {{ pessoa.nome }}, tenho {{ pessoa.idade }} anos e moro em {{ pessoa.endereco }}</p>
-        </div>
-    </article>
+      <p>Meu nome é {{ pessoa.nome }}, tenho {{ pessoa.idade }} anos e moro em {{ pessoa.endereco }}</p>
+    </div>
+  </article>
 </section>
 <!-- FIM TWO WAY DATA BINDING -->
+
+<!-- INPUT PROPERTIES -->
+<section class="input-output-properties" *ngIf="conteudo.value == 'input-properties'">
+  <article>
+    <h3>Input Properties</h3>
+
+    <app-input-property [nome]="nomeDoCurso"></app-input-property>
+    <app-output-property [valor]="10" (mudouValor)="onMudouValor($event)"></app-output-property>
+  </article>
+</section>
+<!-- FIM INPUT PROPERTIES -->
