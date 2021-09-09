@@ -1,1 +1,35 @@
-<p>diretiva-ngif works!</p>
+<h5>*ngIf</h5>
+
+<div *ngIf="cursos.length > 0">
+  Lista de cursos aqui.
+</div>
+
+<div *ngIf="cursos.length == 0">
+  Não existem cursos para serem listados.
+</div>
+
+<div *ngIf="mostrarCursos">
+  Lista de cursos aqui.
+</div>
+
+<div *ngIf="!mostrarCursos">
+  Não existem cursos para serem listados.
+</div>
+
+<br>
+
+<button (click)="mostrarCursos = !mostrarCursos">Mostrar ou enconder cursos</button>
+
+
+<!-- RECOMENDADO QUANDO O STATUS VAI MUDAR COM FREQUÊNCIA -->
+<!-- RECOMENDADO SE A ESTRUTURA A SER ESCONDIDA, SERA PEQUENA -->
+<!-- FICAR ATENTO A SEGURANÇA, SE O ELEMENTO SÓ DEVERIA SER VISTO POR UM SUPER USUÁRIO POR EXEMPLO -->
+<h5>Hidden como alternativa</h5>
+
+<div [hidden]="!mostrarCursos">
+  Lista de cursos aqui.
+</div>
+
+<div [hidden]="mostrarCursos">
+  Não existem cursos para serem listados.
+</div>
