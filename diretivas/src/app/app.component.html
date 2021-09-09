@@ -6,6 +6,7 @@
       <option value="for">*ngFor</option>
       <option value="class">ngClass</option>
       <option value="style">ngStyle</option>
+      <option value="elvis">Operador Elvis</option>
     </select>
   </article>
 </section>
@@ -28,4 +29,8 @@
 
 <ng-container *ngIf="conteudo.value == 'style'">
   <app-diretiva-ngstyle></app-diretiva-ngstyle>
+</ng-container>
+
+<ng-container *ngIf="conteudo.value == 'elvis'">
+  <app-operador-elvis></app-operador-elvis>
 </ng-container>
