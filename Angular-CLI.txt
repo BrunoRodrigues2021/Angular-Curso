@@ -1,4 +1,5 @@
 *Necessário ter node >= 4
+---------------------------------------------------------------------------
 
 INTALAÇÃO DO ANGULAR CLI
 - npm install -g angular-cli
@@ -11,6 +12,8 @@ CRIAR UM PROJETO ANGULAR (NO DIRETÓRIO ATUAL)
 
 SERVIR/ABRIR O SERVIDOR PARA EXECUTAR O PROJETO
 - ng serve
+
+---------------------------------------------------------------------------
 
 CRIANDO COMPONENTS
 - ng generate ***
@@ -42,3 +45,17 @@ CRIANDO COMPONENTS
 -ENUMS
 -- ng g enum meuEnum
 -- ng g e meuEnum
+
+---------------------------------------------------------------------------
+
+CRIANDO UM PROJETO COM PRÉ-PROCESSADORES
+- ng new meuProjeto --style=sass
+- ng new meuProjeto --style=less
+- ng new meuProjeto --style=stylus
+
+EDITANDO O ESTILO EM UM PROJETO PRÉ-EXISTENTE
+- ng set defaults.styleExt scss
+- ng set defaults.styleExt less
+- ng set defaults.styleExt styl
+
+---------------------------------------------------------------------------
