@@ -1,1 +1,17 @@
-<app-data-binding></app-data-binding>
+<section>
+  <article>
+    <select #conteudo (change)="0">
+      <option value="1">Data-Binding</option>
+      <option value="2">Component Life-Cycle</option>
+    </select>
+  </article>
+</section>
+
+<ng-container *ngIf="conteudo.value == '1'">
+  <app-data-binding></app-data-binding>
+</ng-container>
+<ng-container *ngIf="conteudo.value == '2'">
+  <app-life-cycle [valor]="valor" *ngIf="!deletarCiclo"></app-life-cycle>
+  <button (click)="mudarValor()">Mudar Valor</button>
+  <button (click)="destruirCiclo()">Destruir Ciclo</button>
+</ng-container>

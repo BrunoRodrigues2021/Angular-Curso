@@ -15,7 +15,7 @@ export class OutputPropertyComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+ 
   incrementa() {
     this.valor++;
     this.mudouValor.emit({ novoValor: this.valor })
