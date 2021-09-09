@@ -69,3 +69,11 @@ EXECUTA TODOS OS ARQUIVOS spec.ts PARA TESTES UNITARIOS
 
 EXECUTA TESTES DE INTEGRAÇÃO
 - ng e2e
+
+---------------------------------------------------------------------------
+
+FAZ O BUILD DA APLICAÇÃO PARA AMBIENTE DE DESENVOLVIMENTO
+- ng build
+
+FAZ O BUILD DA APLICAÇÃO PARA AMBIENTE DE PRODUÇÃO
+- ng build --prod --base-href /nomeProjeto/
