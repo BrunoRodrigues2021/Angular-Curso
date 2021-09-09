@@ -1,1 +1,21 @@
-<app-diretiva-ngif></app-diretiva-ngif>
+<section>
+  <article>
+    <select #conteudo (change)="0">
+      <option value="if">*ngIf</option>
+      <option value="switch">*ngSwitch</option>
+      <option value="for">*ngFor</option>
+    </select>
+  </article>
+</section>
+
+<ng-container *ngIf="conteudo.value == 'if'">
+  <app-diretiva-ngif></app-diretiva-ngif>
+</ng-container>
+
+<ng-container *ngIf="conteudo.value == 'switch'">
+  <app-diretiva-ngswitch></app-diretiva-ngswitch>
+</ng-container>
+
+<ng-container *ngIf="conteudo.value == 'for'">
+  <app-diretiva-ngfor></app-diretiva-ngfor>
+</ng-container>
