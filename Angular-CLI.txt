@@ -3,6 +3,7 @@
 
 INTALAÇÃO DO ANGULAR CLI
 - npm install -g angular-cli
+- npm i -g angular-cli
 
 CRIANDO UM PROJETO ANGULAR (COM DIRETÓRIO PRÓPRIO)
 - ng new NomeProjeto

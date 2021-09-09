@@ -4,6 +4,8 @@
       <option value="if">*ngIf</option>
       <option value="switch">*ngSwitch</option>
       <option value="for">*ngFor</option>
+      <option value="class">ngClass</option>
+      <option value="style">ngStyle</option>
     </select>
   </article>
 </section>
@@ -18,4 +20,12 @@
 
 <ng-container *ngIf="conteudo.value == 'for'">
   <app-diretiva-ngfor></app-diretiva-ngfor>
+</ng-container>
+
+<ng-container *ngIf="conteudo.value == 'class'">
+  <app-diretiva-ngclass></app-diretiva-ngclass>
+</ng-container>
+
+<ng-container *ngIf="conteudo.value == 'style'">
+  <app-diretiva-ngstyle></app-diretiva-ngstyle>
 </ng-container>
