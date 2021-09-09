@@ -59,3 +59,13 @@ EDITANDO O ESTILO EM UM PROJETO PRÉ-EXISTENTE
 - ng set defaults.styleExt styl
 
 ---------------------------------------------------------------------------
+
+PROCURAR NO PROJETO POR 'ERROS' DE BOAS PRATICA
+- ng lint
+- ng l
+
+EXECUTA TODOS OS ARQUIVOS spec.ts PARA TESTES UNITARIOS
+- ng test
+
+EXECUTA TESTES DE INTEGRAÇÃO
+- ng e2e
