@@ -1,0 +1,44 @@
+*Necessário ter node >= 4
+
+INTALAÇÃO DO ANGULAR CLI
+- npm install -g angular-cli
+
+CRIANDO UM PROJETO ANGULAR (COM DIRETÓRIO PRÓPRIO)
+- ng new NomeProjeto
+
+CRIAR UM PROJETO ANGULAR (NO DIRETÓRIO ATUAL)
+- ng init
+
+SERVIR/ABRIR O SERVIDOR PARA EXECUTAR O PROJETO
+- ng serve
+
+CRIANDO COMPONENTS
+- ng generate ***
+- ng g ***
+
+-COMPONENTES
+-- ng g component meuComponent
+-- ng g c meuComponent
+
+-SERVIÇOS
+-- ng g service meuService
+-- ng g s meuService
+
+-DIRETIVAS
+-- ng g directive minhaDiretiva
+-- ng g d minhaDiretiva
+
+-PIPES
+-- ng g pipe meuPipe
+-- ng g p meuPipe
+
+-CLASSES
+-- ng g class minhaClasse
+
+-INTEFACES
+-- ng g interface minhaInterface
+-- ng g i minhaInterface
+
+-ENUMS
+-- ng g enum meuEnum
+-- ng g e meuEnum
