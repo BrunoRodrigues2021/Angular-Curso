@@ -11,8 +11,7 @@ export class FundoAmareloDirective {
     // this._elementRef.nativeElement.style.backgroundColor = 'yellow';
     this._renderer.setStyle(
       this._elementRef.nativeElement,
-      'background-color',
-      'yellow'
+      'background-color', 'yellow'
     );
   }
 
