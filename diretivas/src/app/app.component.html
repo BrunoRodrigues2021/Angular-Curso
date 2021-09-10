@@ -7,6 +7,7 @@
       <option value="class">ngClass</option>
       <option value="style">ngStyle</option>
       <option value="elvis">Operador Elvis</option>
+      <option value="content">ng-content</option>
     </select>
   </article>
 </section>
@@ -33,4 +34,24 @@
 
 <ng-container *ngIf="conteudo.value == 'elvis'">
   <app-operador-elvis></app-operador-elvis>
+</ng-container>
+
+<!-- <ng-container *ngIf="conteudo.value == 'content'">
+  <app-ng-content>
+      Conteudo passado para o componente.
+  </app-ng-content>
+</ng-container> -->
+
+<ng-container *ngIf="conteudo.value == 'content'">
+  <app-ng-content>
+    <div class="titulo">
+      Título do card
+    </div>
+    <div class="conteudo">
+      Conteudo passado para o componente.
+    </div>
+    <div class="conteudo">
+      Conteudo passado para o componente 2.
+    </div>
+  </app-ng-content>
 </ng-container>
