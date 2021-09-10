@@ -8,6 +8,7 @@
       <option value="style">ngStyle</option>
       <option value="elvis">Operador Elvis</option>
       <option value="content">ng-content</option>
+      <option value="customizada">Diretivas Customizadas</option>
     </select>
   </article>
 </section>
@@ -54,4 +55,8 @@
       Conteudo passado para o componente 2.
     </div>
   </app-ng-content>
+</ng-container>
+
+<ng-container *ngIf="conteudo.value == 'customizada'">
+  <app-diretivas-customizadas></app-diretivas-customizadas>
 </ng-container>
